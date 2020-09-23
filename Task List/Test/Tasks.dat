@@ -1,0 +1,21 @@
+[Tasks]
+Count=8
+Task1=A - Task|08/11/2000||0 - None|1.0.1
+Task2=M - Task|08/11/2000||4 - Medium/High|1.0.1
+Task3=Q - Task|08/11/2000||1 - Low|1.0.1
+Task4=TEST|08/11/2000||7 - Highest|1.0.2
+Task5=Test New Version|08/11/2000||7 - Highest|1.0.3
+Task6=*Test Task 1|08/11/2000|08/11/2000|7 - Highest|1.0.1
+Task7=Test Version Again|08/11/2000||7 - Highest|1.0.4
+Task8=*Z - Task|08/11/2000|08/11/2000|7 - Highest|1.0.1
+
+[Columns]
+1=4364.788
+2=1275.024
+3=2009.764
+4=1214.929
+5=1214.929
+
+[GridColor]
+Color1=16777215
+Color2=16776960

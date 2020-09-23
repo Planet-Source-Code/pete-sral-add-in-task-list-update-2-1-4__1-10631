@@ -1,0 +1,822 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Begin VB.UserDocument docAddIn 
+   BackColor       =   &H80000004&
+   ClientHeight    =   2295
+   ClientLeft      =   2190
+   ClientTop       =   1800
+   ClientWidth     =   8610
+   ContinuousScroll=   0   'False
+   HScrollSmallChange=   225
+   Icon            =   "docAddIn.dox":0000
+   ScaleHeight     =   2295
+   ScaleWidth      =   8610
+   ScrollBars      =   0  'None
+   VScrollSmallChange=   225
+   Begin VB.PictureBox picSaveProject 
+      BackColor       =   &H80000018&
+      BorderStyle     =   0  'None
+      Height          =   870
+      Left            =   1020
+      Picture         =   "docAddIn.dox":0442
+      ScaleHeight     =   870
+      ScaleWidth      =   7125
+      TabIndex        =   3
+      Top             =   660
+      Width           =   7125
+      Begin VB.Label Label1 
+         BackStyle       =   0  'Transparent
+         Caption         =   "SAVE PROJECT TO USE TASK LIST"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   18
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   450
+         Left            =   765
+         TabIndex        =   4
+         Top             =   135
+         Width           =   6345
+      End
+   End
+   Begin VB.PictureBox Picture1 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H80000008&
+      Height          =   180
+      Left            =   420
+      ScaleHeight     =   150
+      ScaleWidth      =   135
+      TabIndex        =   2
+      Top             =   75
+      Visible         =   0   'False
+      Width           =   165
+   End
+   Begin MSComctlLib.ImageList ImageList2 
+      Left            =   4020
+      Top             =   855
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   13
+      ImageHeight     =   13
+      MaskColor       =   12632256
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   8
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":2BE4
+            Key             =   "New"
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":3108
+            Key             =   "View"
+         EndProperty
+         BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":330C
+            Key             =   "Edit"
+         EndProperty
+         BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":34F0
+            Key             =   "About"
+         EndProperty
+         BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":374C
+            Key             =   "Delete"
+         EndProperty
+         BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":3860
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":3D84
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":42A8
+            Key             =   "Help"
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.Toolbar Toolbar1 
+      Align           =   3  'Align Left
+      Height          =   2295
+      Left            =   0
+      TabIndex        =   1
+      Top             =   0
+      Width           =   315
+      _ExtentX        =   556
+      _ExtentY        =   4048
+      ButtonWidth     =   529
+      ButtonHeight    =   503
+      AllowCustomize  =   0   'False
+      Appearance      =   1
+      Style           =   1
+      ImageList       =   "ImageList2"
+      _Version        =   393216
+      BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
+         NumButtons      =   7
+         BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "New"
+            Object.ToolTipText     =   "New Task"
+            ImageKey        =   "New"
+         EndProperty
+         BeginProperty Button2 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "Edit"
+            Object.ToolTipText     =   "Edit Task"
+            ImageKey        =   "Edit"
+         EndProperty
+         BeginProperty Button3 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "Delete"
+            Object.ToolTipText     =   "Delete Task"
+            ImageKey        =   "Delete"
+         EndProperty
+         BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "View"
+            Object.ToolTipText     =   "View Task"
+            ImageKey        =   "View"
+         EndProperty
+         BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button6 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "Colors"
+            Object.ToolTipText     =   "Set Grid Colors"
+            ImageKey        =   "About"
+         EndProperty
+         BeginProperty Button7 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "About"
+            Object.ToolTipText     =   "About"
+            ImageKey        =   "Help"
+         EndProperty
+      EndProperty
+      BorderStyle     =   1
+   End
+   Begin MSComctlLib.ImageList ImageList1 
+      Left            =   4020
+      Top             =   855
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   11
+      ImageHeight     =   7
+      MaskColor       =   12632256
+      UseMaskColor    =   0   'False
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   2
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":43BC
+            Key             =   "Down"
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docAddIn.dox":450C
+            Key             =   "Up"
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.ListView lstTasks 
+      Height          =   2235
+      Left            =   330
+      TabIndex        =   0
+      Top             =   15
+      Width           =   8220
+      _ExtentX        =   14499
+      _ExtentY        =   3942
+      SortKey         =   1
+      View            =   3
+      Sorted          =   -1  'True
+      LabelWrap       =   -1  'True
+      HideSelection   =   0   'False
+      Checkboxes      =   -1  'True
+      GridLines       =   -1  'True
+      _Version        =   393217
+      ColHdrIcons     =   "ImageList1"
+      ForeColor       =   -2147483640
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Appearance      =   1
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      NumItems        =   5
+      BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         Text            =   "Task"
+         Object.Width           =   5365
+      EndProperty
+      BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   1
+         Text            =   "Added"
+         Object.Width           =   0
+      EndProperty
+      BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   2
+         Text            =   "Priority"
+         Object.Width           =   2540
+      EndProperty
+      BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   3
+         Text            =   "Completed"
+         Object.Width           =   2540
+      EndProperty
+      BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   4
+         Text            =   "Version"
+         Object.Width           =   0
+      EndProperty
+   End
+   Begin VB.Menu mnuMenu 
+      Caption         =   "Menu"
+      Visible         =   0   'False
+      Begin VB.Menu mnuNew 
+         Caption         =   "&New"
+      End
+      Begin VB.Menu mnuEdit 
+         Caption         =   "&Edit"
+      End
+      Begin VB.Menu mnuDelete 
+         Caption         =   "&Delete"
+      End
+      Begin VB.Menu mnuView 
+         Caption         =   "&View"
+      End
+      Begin VB.Menu mnuSep 
+         Caption         =   "-"
+      End
+      Begin VB.Menu mnuColors 
+         Caption         =   "&Colors"
+      End
+      Begin VB.Menu mnuAbout 
+         Caption         =   "&About"
+      End
+   End
+End
+Attribute VB_Name = "docAddIn"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Public WithEvents evtVBProjects As VBProjectsEvents
+Attribute evtVBProjects.VB_VarHelpID = -1
+Public WithEvents evtVBFiles As FileControlEvents
+Attribute evtVBFiles.VB_VarHelpID = -1
+
+Private mintCurrSelect As Integer
+
+Private Const m_sDefaultPriority As String = "0 - None"
+
+
+
+Private Sub evtVBFiles_AfterWriteFile(ByVal VBProject As VBIDE.VBProject, ByVal FileType As VBIDE.vbext_FileType, ByVal FileName As String, ByVal Result As Integer)
+   
+   Dim strPath As String
+   
+   On Error GoTo evtVBFiles_AfterWriteFile_Error
+   
+    
+    
+   If FileType = vbext_ft_Project Then
+      If Len(gstrTaskFile) > 0 Then
+         WriteTasks
+      Else
+         GetTaskFile FileName
+         WriteTasks
+      End If
+   End If
+
+Exit Sub
+
+evtVBFiles_AfterWriteFile_Error:
+   DoError "docAddIn", "evtVBFiles_AfterWriteFile", Err
+    
+End Sub
+
+Private Sub evtVBProjects_ItemActivated(ByVal VBProject As VBIDE.VBProject)
+
+   Dim strPath As String
+   
+   '--Save the current task list
+   WriteTasks
+   
+   '--Retrieve the tasks for the newly active project
+   strPath = gobjVBInstance.ActiveVBProject.FileName
+   GetTaskFile strPath
+   
+   If Len(gobjVBInstance.ActiveVBProject.FileName) = 0 Then
+        Toolbar1.Enabled = False
+        lstTasks.Enabled = False
+    Else
+        Toolbar1.Enabled = True
+        lstTasks.Enabled = True
+    End If
+    picSaveProject.Visible = Toolbar1.Enabled
+    
+End Sub
+
+Private Sub evtVBProjects_ItemAdded(ByVal VBProject As VBIDE.VBProject)
+   
+   Dim strPath As String
+   
+   strPath = VBProject.FileName
+   
+   If Len(strPath) = 0 Then
+      Exit Sub
+   End If
+   
+   If Len(gstrTaskFile) > 0 Then
+      WriteTasks
+   Else
+      GetTaskFile strPath
+   End If
+
+End Sub
+
+Private Sub evtVBProjects_ItemRemoved(ByVal VBProject As VBIDE.VBProject)
+
+   '--Save the current tasks and clear the list
+   WriteTasks
+   gstrTaskFile = vbNullString
+   lstTasks.ListItems.Clear
+
+End Sub
+
+Private Sub lstTasks_Click()
+   
+   On Error GoTo lstTasks_Click_Error
+
+   If gblMouseClick = vbRightButton Then
+      UserDocument.PopupMenu mnuMenu
+   End If
+
+   Exit Sub
+   
+lstTasks_Click_Error:
+   DoError "docAddIn", "lstTasks_Click", Err
+    
+End Sub
+
+Private Sub lstTasks_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)
+
+    'the if is to avoid having to double click a column to re-sort
+Dim sIcon As String
+Dim lngIndex As Long
+
+    lstTasks.SortKey = ColumnHeader.Index - 1
+    lstTasks.Sorted = True
+    
+    If lstTasks.SortKey = ColumnHeader.Index - 1 Then
+        If lstTasks.SortOrder = lvwDescending Then
+            lstTasks.SortOrder = lvwAscending
+            sIcon = "Up"
+        Else
+            lstTasks.SortOrder = lvwDescending
+            sIcon = "Down"
+        End If
+   Else
+        lstTasks.SortOrder = lvwAscending
+        sIcon = "Up"
+   End If
+   
+   lstTasks.ColumnHeaders(ColumnHeader.Index).Icon = sIcon
+     
+     ' loop through all of the column headers
+    For lngIndex = 1 To lstTasks.ColumnHeaders.Count
+        ' except the current one
+        If lngIndex <> ColumnHeader.Index Then
+            ' and if it has an 'up' or 'down' then
+            If lstTasks.ColumnHeaders(lngIndex).Icon = "Up" Or _
+            lstTasks.ColumnHeaders(lngIndex).Icon = "Down" Then
+                ' dectroy it's icon
+                lstTasks.ColumnHeaders(lngIndex).Icon = 0
+            End If
+        End If
+    Next lngIndex
+   
+   lstTasks.Refresh
+
+End Sub
+
+Private Sub lstTasks_DblClick()
+   
+   On Error GoTo lstTasks_DblClick_Error
+   
+   'lstTasks.ListItems.Add
+   'lstTasks.StartLabelEdit
+   'lstTasks.ListItems.Item(1).SubItems(1) = Format(Now, "mm/dd/yyyy")
+   'lstTasks.ListItems.Item(1).SubItems(2) = m_sDefaultPriority
+    
+    UserDocument.PopupMenu mnuMenu
+
+lstTasks_DblClick_Error:
+   DoError "docAddIn", "lstTasks_DblClick", Err
+   
+End Sub
+
+Private Sub lstTasks_ItemCheck(ByVal Item As MSComctlLib.ListItem)
+
+   On Error GoTo lstTasks_ItemCheck_Error
+   
+   If Item.Checked = True Then
+      Item.ForeColor = vbGrayText
+      Item.SubItems(3) = Format(Now, "mm/dd/yyyy")
+      Item.SubItems(4) = GetCurrentVersion()
+   Else
+      Item.ForeColor = vbBlack
+      Item.SubItems(3) = ""
+      Item.SubItems(4) = GetCurrentVersion()
+   End If
+    
+lstTasks_ItemCheck_Error:
+    DoError "docAddIn", "lstTasks_ItemCheck", Err
+    
+End Sub
+
+Private Sub lstTasks_ItemClick(ByVal Item As MSComctlLib.ListItem)
+    
+   mintCurrSelect = Item.Index
+
+End Sub
+
+Private Sub lstTasks_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+
+   On Error GoTo lstTasks_MouseDown_Error
+
+   gblMouseClick = Button
+    
+   Exit Sub
+   
+lstTasks_MouseDown_Error:
+   DoError "docAddIn", "lstTasks_MouseDown", Err
+
+End Sub
+
+Private Sub mnuColors_Click()
+    frmColors.Show vbModal, Me
+    SetListViewColor lstTasks, Picture1
+End Sub
+
+Private Sub mnuEdit_Click()
+
+    If mintCurrSelect <> 0 Then
+        lstTasks.StartLabelEdit
+    End If
+End Sub
+
+Private Sub mnuView_Click()
+   
+   Load frmView
+   
+   With frmView
+      .InitForm lstTasks, gobjVBInstance.ActiveVBProject.Description
+      .Show
+   End With
+
+End Sub
+
+
+Private Sub mnuAbout_Click()
+    
+   frmAbout.Show
+
+End Sub
+
+Private Sub mnuNew_Click()
+
+    
+    Dim itmx As ListItem
+   
+   
+   On Error GoTo mnuNew_Click_Error
+
+    
+    'strTask = InputBox("Enter new Task \ Priority  Format:[Task]\[Priority]", "New Task")
+    
+    
+    Load frmNew
+    frmNew.Show vbModal, Me
+    
+    If Len(frmNew.TaskDesc) <> 0 Then
+        Set itmx = lstTasks.ListItems.Add(1)
+        
+        itmx.Text = frmNew.TaskDesc
+        itmx.SubItems(1) = Format(Now, "mm/dd/yyyy")
+        If Len(frmNew.TaskPriority) <> 0 Then
+            itmx.SubItems(2) = frmNew.TaskPriority
+        Else
+            itmx.SubItems(2) = m_sDefaultPriority
+        End If
+        'itmx.SubItems(4) = GetCurrentVersion()
+        
+        frmNew.TaskDesc = ""
+        frmNew.TaskPriority = ""
+        
+    Set itmx = Nothing
+    
+    End If
+   
+   Unload frmNew
+   
+   Exit Sub
+   
+mnuNew_Click_Error:
+   DoError "docAddIn", "mnuNew_Click", Err
+    If Not (itmx Is Nothing) Then
+        Set itmx = Nothing
+    End If
+   Unload frmNew
+End Sub
+
+Private Sub Toolbar1_ButtonClick(ByVal Button As MSComctlLib.Button)
+    Select Case Button.Key
+        Case Is = "New"
+            mnuNew_Click
+        Case Is = "Edit"
+            mnuEdit_Click
+        Case Is = "Delete"
+            mnuDelete_Click
+        Case Is = "View"
+            mnuView_Click
+        Case Is = "About"
+            mnuAbout_Click
+        Case Is = "Colors"
+            mnuColors_Click
+    End Select
+End Sub
+
+Private Sub UserDocument_Initialize()
+   
+   Dim strPath As String
+   
+   On Error GoTo UserDocument_Initialize_Error
+
+   If Not gobjVBInstance Is Nothing Then
+    Set Me.evtVBProjects = gobjVBInstance.Events.VBProjectsEvents
+    Set Me.evtVBFiles = gobjVBInstance.Events.FileControlEvents(Nothing)
+   End If
+   
+   
+   
+   
+   If Not (gobjVBInstance Is Nothing) Then
+      If gobjVBInstance.VBProjects.Count = 0 Then
+          Toolbar1.Enabled = False
+          lstTasks.Enabled = False
+         Exit Sub
+      Else
+         Toolbar1.Enabled = True
+         lstTasks.Enabled = True
+         strPath = gobjVBInstance.ActiveVBProject.FileName
+         GetTaskFile strPath
+      End If
+      picSaveProject.Visible = Not Toolbar1.Enabled
+      
+   End If
+   
+   If Len(gobjVBInstance.ActiveVBProject.FileName) = 0 Then
+        Toolbar1.Enabled = False
+        lstTasks.Enabled = False
+    Else
+        Toolbar1.Enabled = True
+        lstTasks.Enabled = True
+    End If
+    picSaveProject.Visible = Not Toolbar1.Enabled
+    
+   
+   Exit Sub
+   
+UserDocument_Initialize_Error:
+    DoError "docAddIn", "UserDocument - Initialize", Err
+    
+End Sub
+
+Private Sub mnuDelete_Click()
+
+   On Error GoTo mnuDelete_Error
+   
+   If mintCurrSelect <> 0 Then
+      If MsgBox("Delete task: " & lstTasks.ListItems(lstTasks.SelectedItem.Index).Text & "?", _
+                vbQuestion + vbYesNo + vbDefaultButton1) = vbYes Then
+         lstTasks.ListItems.Remove (mintCurrSelect)
+         WriteTasks
+      End If
+   End If
+   
+   Exit Sub
+   
+mnuDelete_Error:
+   DoError "docAddIn", "mnuDelete", Err
+    
+End Sub
+
+Public Sub LoadTasks()
+   
+   Dim lngCount As Long
+   Dim lngIndex As Long
+   Dim lstItem As ListItem
+   Dim strBuffer As String, strSDesc As String
+   Dim strSAdd As String, strSEnd As String
+   Dim strPriority As String, strVersion As String
+   
+   On Error GoTo LoadTasks_Error
+   
+   lstTasks.ListItems.Clear
+   
+   
+   lngCount = CLng(GetFromIni("Tasks", "Count", gstrTaskFile))
+   
+   Toolbar1.Enabled = True
+   lstTasks.Enabled = True
+   picSaveProject.Visible = Not Toolbar1.Enabled
+   
+   For lngIndex = 1 To lngCount
+      strBuffer = GetFromIni("tasks", "task" & lngIndex, gstrTaskFile)
+      Set lstItem = lstTasks.ListItems.Add
+      If Mid(strBuffer, 1, 1) = "*" Then
+         lstItem.Checked = True
+         lstItem.ForeColor = vbGrayText
+         strBuffer = Mid(strBuffer, 2)
+         strSDesc = GetToken(strBuffer, "|")
+         strSAdd = GetToken(strBuffer, "|")
+         strSEnd = GetToken(strBuffer, "|")
+         strPriority = GetToken(strBuffer, "|")
+         strPriority = IIf(Len(strPriority) <> 0, strPriority, m_sDefaultPriority)
+         strVersion = strBuffer
+         lstItem.Text = strSDesc
+         
+         lstItem.SubItems(1) = strSAdd
+         lstItem.SubItems(2) = strPriority
+         lstItem.SubItems(3) = strSEnd
+         lstItem.SubItems(4) = strVersion
+      Else
+         strSDesc = GetToken(strBuffer, "|")
+         strSAdd = GetToken(strBuffer, "|")
+         strSEnd = GetToken(strBuffer, "|")
+        strPriority = GetToken(strBuffer, "|")
+         strPriority = IIf(Len(strPriority) <> 0, strPriority, m_sDefaultPriority)
+         strVersion = strBuffer
+         lstItem.Text = strSDesc
+         
+         lstItem.SubItems(1) = strSAdd
+         lstItem.SubItems(2) = strPriority
+         lstItem.SubItems(3) = strSEnd
+         lstItem.SubItems(4) = strVersion
+      End If
+   Next lngIndex
+   
+   'this does not seem to work
+   'lstTasks.SortOrder = lvwAscending
+   'lstTasks.SortKey = 1
+   'lstTasks.Sorted = True
+   'lstTasks.ColumnHeaders(1).Icon = "Up"
+   'lstTasks.Refresh
+   
+   lstTasks.ColumnHeaders.Item(1).Width = IIf(Len(GetFromIni("Columns", "1", gstrTaskFile)) <> 0, Val(GetFromIni("Columns", "1", gstrTaskFile)), 3041)
+   lstTasks.ColumnHeaders.Item(2).Width = IIf(Len(GetFromIni("Columns", "2", gstrTaskFile)) <> 0, Val(GetFromIni("Columns", "2", gstrTaskFile)), 0)
+   lstTasks.ColumnHeaders.Item(3).Width = IIf(Len(GetFromIni("Columns", "3", gstrTaskFile)) <> 0, Val(GetFromIni("Columns", "3", gstrTaskFile)), 1440)
+   lstTasks.ColumnHeaders.Item(4).Width = IIf(Len(GetFromIni("Columns", "4", gstrTaskFile)) <> 0, Val(GetFromIni("Columns", "4", gstrTaskFile)), 1440)
+   lstTasks.ColumnHeaders.Item(5).Width = IIf(Len(GetFromIni("Columns", "5", gstrTaskFile)) <> 0, Val(GetFromIni("Columns", "5", gstrTaskFile)), 0)
+   
+       
+   SetListViewColor lstTasks, Picture1
+   lstTasks.Refresh
+   
+LoadTasks_Error:
+   DoError "docAddIn", "LoadTasks", Err
+   
+End Sub
+
+Function StripNameFromPath(ByVal pstrSearchstring As String) As String
+   
+   Dim strTest As String
+   Dim intLastSlashPos As Integer
+   Dim i As Integer
+   Dim intMyPos As Integer
+   Dim strSearchchar As String
+   
+   On Error GoTo StripNameFromPath_Error
+   
+   strTest = "NULL"
+   strSearchchar = "\"
+   
+   For i = 1 To Len(pstrSearchstring)
+      intMyPos = InStr(i, pstrSearchstring, strSearchchar, 1)
+      If intMyPos = 0 Then
+         If strTest = "NULL" Then
+            strTest = Str(i)
+         End If
+      End If
+   Next i
+   
+   intLastSlashPos = Val(strTest)
+   StripNameFromPath = Mid(pstrSearchstring, 1, intLastSlashPos - 1)
+   
+   Exit Function
+   
+StripNameFromPath_Error:
+   DoError "docAddIn", "StripNameFromPath", Err
+   
+End Function
+
+
+Private Sub UserDocument_Resize()
+   
+   On Error Resume Next
+   
+   lstTasks.Height = UserDocument.Height - 75
+   lstTasks.Width = UserDocument.Width - Toolbar1.Width - 90
+   'lstTasks.ColumnHeaders(1).Width = lstTasks.Width - lstTasks.ColumnHeaders.Item(2).Width - lstTasks.ColumnHeaders.Item(3).Width - lstTasks.ColumnHeaders.Item(4).Width - lstTasks.ColumnHeaders.Item(5).Width
+
+    
+End Sub
+
+Private Sub GetTaskFile(strProjectPath As String)
+'--Loads the task file if it doesn't exits, otherwise
+'  creates a new one.
+
+   Dim intFileNum As Integer
+   
+   On Error GoTo GetTaskFile_Error
+   
+   strProjectPath = StripNameFromPath(strProjectPath)
+   gstrTaskFile = strProjectPath & TASK_FILE_NAME
+   
+   If FileExists(gstrTaskFile) = False Then
+      intFileNum = FreeFile
+      Open gstrTaskFile For Output As #intFileNum
+      Print #intFileNum, "[Tasks]"
+      Print #intFileNum, "Count=0"
+      Close #intFileNum
+   Else
+       
+      LoadTasks
+   End If
+   
+   Exit Sub
+   
+GetTaskFile_Error:
+   DoError "docAddIn", "GetTaskFile", Err
+   
+End Sub
+
+Private Sub WriteTasks()
+   
+   Dim lngCount As Long
+   Dim lngIndex As Long
+   Dim strBuffer As String
+   
+   On Error GoTo WriteTasks_Error
+   
+   lngCount = lstTasks.ListItems.Count
+   WriteToIni "Tasks", "Count", CStr(lngCount), gstrTaskFile
+   For lngIndex = 1 To lngCount
+      If lstTasks.ListItems.Item(lngIndex).Checked Then
+         WriteToIni "Tasks", "Task" & lngIndex, "*" _
+                  & lstTasks.ListItems.Item(lngIndex).Text _
+                  & "|" & lstTasks.ListItems.Item(lngIndex).SubItems(1) _
+                  & "|" & lstTasks.ListItems.Item(lngIndex).SubItems(3) _
+                  & "|" & lstTasks.ListItems.Item(lngIndex).SubItems(2) _
+                  & "|" & lstTasks.ListItems.Item(lngIndex).SubItems(4), _
+                  gstrTaskFile
+      Else
+         WriteToIni "Tasks", "Task" & lngIndex, lstTasks.ListItems.Item(lngIndex).Text _
+                  & "|" & lstTasks.ListItems.Item(lngIndex).SubItems(1) _
+                  & "|" & lstTasks.ListItems.Item(lngIndex).SubItems(3) _
+                  & "|" & lstTasks.ListItems.Item(lngIndex).SubItems(2) _
+                  & "|" & lstTasks.ListItems.Item(lngIndex).SubItems(4), _
+                  gstrTaskFile
+      End If
+   Next lngIndex
+   
+   WriteToIni "Columns", "1", lstTasks.ColumnHeaders.Item(1).Width, gstrTaskFile
+   WriteToIni "Columns", "2", lstTasks.ColumnHeaders.Item(2).Width, gstrTaskFile
+   WriteToIni "Columns", "3", lstTasks.ColumnHeaders.Item(3).Width, gstrTaskFile
+   WriteToIni "Columns", "4", lstTasks.ColumnHeaders.Item(4).Width, gstrTaskFile
+   WriteToIni "Columns", "5", lstTasks.ColumnHeaders.Item(5).Width, gstrTaskFile
+   Exit Sub
+   
+WriteTasks_Error:
+   DoError "docAddIn", "WriteTasks", Err
+   
+End Sub
+
